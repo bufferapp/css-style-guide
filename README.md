@@ -29,40 +29,40 @@ To write our CSS, we try and follow this simple naming convention:
 
 ### Objects
 
-Objects are standalone entities that are meaningful on their own. Objects that are made up of multiple words are capitalized and connected by a single `-`.
+Objects are standalone entities that are meaningful on their own. Objects that are made up of multiple words are connected by a single `-`.
 
 **Examples:**
 
-`Header`, `Sidebar`, `Button`, `Icon`, `Footer`, `Footer-Navigation`
+`header`, `sidebar`, `button`, `icon`, `footer`, `footer-navigation`
 
 ### Modifiers
 
-Modifiers change the appearance or behavior of objects. They are suffixed to the end of an object with a prefix of `--`. They should also be lowercase.
+Modifiers change the appearance or behavior of objects. They are suffixed to the end of an object with a prefix of `--`.
 
 **Example:**
 
-`Button--disabled`, `Icon--small`, `Navigation--hidden`
+`button--disabled`, `icon--small`, `navigation--hidden`
 
 ### In Practice
 
 **HTML:**
 
 ```html
-<button class="Button">
+<button class="button">
   Filter
 </button>
 
-<button class="Button Button--primary">
+<button class="button button--primary">
   Add to Queue
 </button>
 
-<button class="Button">
-  <i class="Icon Button-Icon Icon-Calendar"></i>
+<button class="button">
+  <i class="icon button-icon icon-calendar"></i>
   Schedule
 </button>
 
-<button class="Button Button--primary">
-  <i class="Icon Button-Icon--primary Icon-Plus"></i>
+<button class="button button--primary">
+  <i class="icon button-icon--primary icon-plus"></i>
   Add New Account
 </button>
 ```
@@ -72,9 +72,8 @@ Modifiers change the appearance or behavior of objects. They are suffixed to the
 ```css
 /* Buttons
 ------------------------------------------------------------ */
-.Button {
+.button {
   padding: 0 24px;
-
   height: 32px;
 
   font-size: 14px;
@@ -86,7 +85,7 @@ Modifiers change the appearance or behavior of objects. They are suffixed to the
   border-radius: 4px;
 }
 
-.Button--primary {
+.button--primary {
   color: #ffffff;
 
   background-color: #168eea;
@@ -94,13 +93,13 @@ Modifiers change the appearance or behavior of objects. They are suffixed to the
   border-radius: 32px;
 }
 
-.Button-Icon {
+.button-icon {
   @include Button-Icon-Margin
 
   color: #323b43;
 }
 
-.Button-Icon--primary {
+.button-icon--primary {
   @include Button-Icon-Margin
 
   color: #ffffff;
@@ -108,7 +107,7 @@ Modifiers change the appearance or behavior of objects. They are suffixed to the
 
 /* Icons
 ------------------------------------------------------------ */
-.Icon {
+.icon {
   width: 16px;
   height: 16px;
 }
@@ -122,13 +121,13 @@ Objects styles should not have dependencies on other elements on a page. This wi
 
 #### Reusability
 
-Composing independant objects in a different way and reusing them reduces the amount of CSS needed and also helps maintainability.
+Composing independent objects in a different way and reusing them reduces the amount of CSS needed and also helps maintainability.
 
 A goal that we're keen to focus on is to have a library of production-ready objects as part of our style guide that we can simply copy and paste in to our projects as we're building Buffer.
 
 #### Structure
 
-Buffer's OM methodology, inspired by BEM, gives us a simple and understandable structure in how we write our CSS.
+Buffer's OM methodology, inspired by [BEM](http://getbem.com), gives us a simple and understandable structure in how we write our CSS.
 
 ___
 
@@ -139,17 +138,17 @@ ___
 We indent by 2 spaces at a time and try to avoid mixing tabs and spacing:
 
 ```css
-.Button {
+.button {
   color: #fff;
 }
 ```
 
 ### Lowercase
 
-CSS that isn't an object name should be lower case:
+All of our CSS should be lower case:
 
 ```css
-.Button--primary {
+.button--primary {
   color: #ffffff;
 
   background-color: #168eea;
@@ -163,9 +162,8 @@ CSS that isn't an object name should be lower case:
 We use the [box model](http://codeguide.co/#css-declaration-order) coupled with a line space between each section:
 
 ```css
-.Button {
+.button {
   padding: 0 24px;
-
   height: 32px;
 
   font-size: 14px;
@@ -183,7 +181,7 @@ We use the [box model](http://codeguide.co/#css-declaration-order) coupled with 
 We should end every declaration with a semicolon:
 
 ```css
-.Button {
+.button {
   background-color: #ffffff;
   border: 1px solid #ced7df;
   border-radius: 4px;
@@ -195,7 +193,7 @@ We should end every declaration with a semicolon:
 We use a single space between the property and value and no space between the property and the colon:
 
 ```css
-.Button {
+.button {
   height: 32px;
 }
 ```
@@ -205,7 +203,7 @@ We use a single space between the property and value and no space between the pr
 We use a single space between the last selector and the opening brace that begins the declaration block. The opening brace should be on the same line as the last selector in a given rule:
 
 ```css
-.Button {
+.button {
   // ...
 }
 ```
